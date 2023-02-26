@@ -3,31 +3,23 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   const [count, setCount] = useState(0);
-  const [ınput, setInput] = useState(1);
+  const [Increment, setIncrement] = useState(1);
 
   const sayacArttir = () => {
-    setCount(count + 1);
+    setCount(count + Increment);
   };
 
   const sayacAzalt = () => {
     setCount(count - 1);
   };
 
-  const handleOnChange = (e) => {
-    setInput(e.target.value);
-  };
-
-  const sayacaEkle = () => {
-    if (ınput) setCount(count + parseInt(ınput));
-  };
-
-  const SayactanCikar = () => {
-    if (ınput) setCount(count - parseInt(ınput));
+  const handleOfIncrement = (e) => {
+    setIncrement(+e.target.value);
   };
 
   const sayacReset = () => {
     setCount(0);
-    setInput(0);
+    setIncrement(1);
   };
   return (
     <div className="d flex justify-content-center align-items-center">
@@ -45,14 +37,9 @@ function App() {
             Resetle
           </button>
         </div>
-
-        <input value={ınput} onChange={handleOnChange} className="mb-3" />
-        <button className="btn btn-primary mx-3" onClick={sayacaEkle}>
-          Ekle
-        </button>
-        <button className="btn btn-info" onClick={SayactanCikar}>
-          Çıkar
-        </button>
+      <div>Artış Miktari</div>
+        <input value={Increment} onChange={handleOfIncrement} className="mb-3" />
+   
       </div>
     </div>
   );
