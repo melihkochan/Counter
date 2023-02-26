@@ -10,7 +10,7 @@ function App() {
   };
 
   const sayacAzalt = () => {
-    setCount(count - 1);
+    setCount(count - Increment);
   };
 
   const handleOfIncrement = (e) => {
